@@ -11,14 +11,17 @@
 
 <p><strong>Store:</strong> {{ item.store.title }}</p>
 
+<p><strong>Created by:</strong> {{ item.created_by.username }}</p> <!-- Display username of the creator -->
+
+<form action="{{ url_for('main.add_to_shopping_list', item_id=item.id) }}" method="post">
+    <button type="submit">Add to Shopping List</button>
+</form>
 
 <h2>Edit Item</h2>
 
 <form>
     <fieldset>
         <legend>Please enter your information:</legend>
-
-
 
         <!-- TODO: Remove the next paragraph and use the `form` object passed in 
             from the route to render a form. -->

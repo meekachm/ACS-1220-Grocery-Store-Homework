@@ -16,7 +16,16 @@
                 <div>
                     <a href="/new_store">New Store</a>
                     <a href="/new_item">New Item</a>
+                    <a href="/shopping_list">Shopping List</a>
                 </div>
+                {% if current_user.is_authenticated %}
+                    <form action="/logout" method="post">
+                        <input type="submit" value="Logout">
+                    </form>
+                {% else %}
+                    <a href="/login">Login</a>
+                    <a href="/signup">Signup</a>
+                {% endif %}
             </nav>
             {% block content %}{% endblock %}
         </div>
